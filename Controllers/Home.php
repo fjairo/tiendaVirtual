@@ -10,7 +10,7 @@ class Home extends Controllers
     public function home()
     {
         $data['page_id'] = 1;
-        $data['tag_page'] = "Home";
+        $data['page_tag'] = "Home";
         $data['page_title'] = "página principal";
         $data['page_name'] = "Home";
         $data['page_content'] = "Tendencias tiene como objetivo la comercialización de prendas de vestir y accesorios pret-a-porter que resaltan la belleza de la mujer actual, regida por las últimas tendencias de la moda para cada temporada (primavera-verano y otoño-invierno) en ropa, calzado y accesorios.";

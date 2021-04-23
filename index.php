@@ -1,5 +1,6 @@
 <?php
 require_once("Config/Config.php");
+require_once("Helpers/helpers.php");
 //Validación de controlador y carga predeteminada
 $url = !empty($_GET['url']) ? $_GET['url'] : 'Home/home';
 $arrayUrl = explode("/", $url);
