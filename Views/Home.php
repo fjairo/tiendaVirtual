@@ -37,13 +37,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<?= media(); ?>images/slider_pagina.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+                <img src="<?= media(); ?>images/slider_image1.png" class="d-block w-100" alt="..." style="height: 500px;">
             </div>
             <div class="carousel-item">
-                <img src="<?= media(); ?>images/slider_compras.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+                <img src="<?= media(); ?>images/slider_image2.png" class="d-block w-100" alt="..." style="height: 500px;">
             </div>
             <div class="carousel-item">
-                <img src="<?= media(); ?>images/slider_telefono.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+                <img src="<?= media(); ?>images/slider_image3.png" class="d-block w-100" alt="..." style="height: 500px;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
