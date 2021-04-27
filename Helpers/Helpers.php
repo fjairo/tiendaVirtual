@@ -8,6 +8,16 @@ function media()
 {
     return BASE_URL."Assets/";
 }
+function headerAdmin($data="")
+{
+    $view_header="Views/Template/Header_admin.php";
+    require_once($view_header);
+}
+function FooterAdmin()
+{
+    $view_footer="Views/Template/Footer_admin.php";
+    require_once($view_footer);
+}
 //formatear array
 function dep($data)
 {
