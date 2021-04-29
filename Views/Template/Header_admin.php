@@ -18,13 +18,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#009688">
-  <LINK rel="shortcut icon" href="<?= media(); ?>/images/favicon.ico">
+  <LINK rel="shortcut icon" href="<?= media(); ?>images/favicon.ico">
   <title><?= $data['page_tag'] ?></title>
   <!-- Main CSS-->
   <link rel="stylesheet" type="text/css" href="<?= media(); ?>Css/main.css">
   <link rel="stylesheet" type="text/css" href="<?= media(); ?>Css/style.css">
-
-  <link rel="stylesheet" type="text/css" href="<?= media(); ?>Css/bootstrap.min.css">
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
