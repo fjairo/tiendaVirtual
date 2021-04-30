@@ -1,4 +1,3 @@
-
 <?php
 function base_url()
 {
@@ -6,16 +5,16 @@ function base_url()
 }
 function media()
 {
-    return BASE_URL."Assets/";
+    return BASE_URL . "Assets/";
 }
-function headerAdmin($data="")
+function headerAdmin($data = "")
 {
-    $view_header="Views/Template/Header_admin.php";
+    $view_header = "Views/Template/Header_admin.php";
     require_once($view_header);
 }
 function FooterAdmin()
 {
-    $view_footer="Views/Template/Footer_admin.php";
+    $view_footer = "Views/Template/Footer_admin.php";
     require_once($view_footer);
 }
 //formatear array
@@ -27,10 +26,17 @@ function dep($data)
 
     return $format;
 }
+
+function getModal(string $nameModal, $data)
+{
+    $view_modal = "Views/Template/Modals/{$nameModal}.php";
+    require_once $view_modal;
+}
+
 //limpiar cadena
 function strClear($strCadena)
 {
-    $string = preg_replace(['/\s+/','/^\s|\s$/'], [' ' , ''], $strCadena); //limpiar espacios etre palabra
+    $string = preg_replace(['/\s+/', '/^\s|\s$/'], [' ', ''], $strCadena); //limpiar espacios etre palabra
     $string = trim($string); //elimina espacios al principio y al final
     $string = stripslashes($string); // elimina las diagonales(\) invertidadas
     $string = str_ireplace("<script>", "", $string);
@@ -93,4 +99,3 @@ function formatMoney($cantidad)
     $cantidad = number_format($cantidad, 2, SPD, SPM);
     return $cantidad;
 }
-?>
