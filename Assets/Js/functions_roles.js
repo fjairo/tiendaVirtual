@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
             { "data": "idrol" },
             { "data": "nombrerol" },
             { "data": "descripcion" },
-            { "data": "status" }
+            { "data": "status" },
+            { "data": "options" }
         ],
         "resonsieve": "true",
         "bDestroy": true,
