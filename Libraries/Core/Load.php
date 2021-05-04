@@ -2,7 +2,6 @@
 
 //validación de existencia del controlador
 $controllerFile = "Controllers/" . $controller . ".php";
-echo $controllerFile . "<br>"; //:)
 
 if (file_exists($controllerFile)) {
     require_once($controllerFile);

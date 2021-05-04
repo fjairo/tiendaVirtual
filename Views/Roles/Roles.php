@@ -1,6 +1,7 @@
 <?php headerAdmin($data);
 getModal('ModalsRoles', $data);
 ?>
+
 <main class="app-content">
   <div class="app-title">
     <div>
@@ -14,10 +15,26 @@ getModal('ModalsRoles', $data);
       <li class="breadcrumb-item"><a href="<?= base_url(); ?>/Roles"><?= $data['page_title'] ?></a></li>
     </ul>
   </div>
+  <!--tabla-->
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <div class="tile-body">Roles de usuario</div>
+        <div class="tile-body">
+          <div class="table-responsive">
+            <table class="table table-hover table-bordered" id="tableRoles">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>

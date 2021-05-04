@@ -6,3 +6,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
 RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
+#Configuracion Access-Control-Allow-Origin para localhost
+#header set Access-Control-Allow-Origin "https://localhost"
+#configuración Access-Control-Allow-Origin no recomendada para deshabilitar completamente CORS
+
+Header Set Access-Control-Allow-Origin "*"

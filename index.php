@@ -1,4 +1,5 @@
 <?php
+//header('Access-Control-allow-origin:http://localhost');
 require_once("Config/Config.php");
 require_once("Helpers/Helpers.php");
 //Validación de controlador y carga predeteminada
@@ -7,7 +8,6 @@ $arrayUrl = explode("/", $url);
 $controller = $arrayUrl[0];
 $method = $arrayUrl[0];
 $params = "";
-print_r($arrayUrl); //:)
 
 //validación de método
 if (!empty($arrayUrl[1])) {
