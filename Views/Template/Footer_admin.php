@@ -8,6 +8,8 @@
 <script src="<?= media(); ?>Js/main.js"></script>
 <script src="<?= media(); ?>Js/fontawesome.js"></script>
 <script src="<?= media(); ?>Js/functions_admin.js"></script>
+<script type="text/javascript" src="<?= media(); ?>Js/plugins/sweetalert.min.js"></script>
+
 
 <!-- The javascript plugin to display page loading on top-->
 <script src="<?= media(); ?>Js/plugins/pace.min.js"></script>

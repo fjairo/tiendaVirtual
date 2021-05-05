@@ -28,11 +28,26 @@ class Roles extends Controllers
             <button class="btn-secondary btn-sm btnPermisosRol" rl="' . $arrData[$i]['idrol'] . '"title="Permisos"><i class="fas fa-key"></i></button>
             <button class="btn-primary btn-sm btnEditRol" rl="' . $arrData[$i]['idrol'] . '"title="Editar"><i class="fas fa-pencil-alt"></i></button>
             <button class="btn-danger btn-sm btnDelRol" rl="' . $arrData[$i]['idrol'] . '"title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-
-
             </div>';
         }
         echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+    public function setRol()
+    {
+        $strRol = strClean($_POST['txtNombre']);
+        $strDescripcion = strClean($_POST['txtDescripcion']);
+        $intStatus = intval($_POST['listStatus']);
+        $request_rol = $this->model->insertRol($strRol, $strDescripcion, $intStatus);
+
+        if ($request_rol > 0) {
+            $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+        }else if($request_rol=='exist'){
+            $arrResponse = array('status' => false, 'msg' => '¡Atención! El rol ya existe.');
+        }else{
+            $arrResponse = array('status' => false, 'msg' => 'No es posible almacenar los datos.');
+        }
+        echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
         die();
     }
 }

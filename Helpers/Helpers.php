@@ -34,7 +34,7 @@ function getModal(string $nameModal, $data)
 }
 
 //limpiar cadena
-function strClear($strCadena)
+function strClean($strCadena)
 {
     $string = preg_replace(['/\s+/', '/^\s|\s$/'], [' ', ''], $strCadena); //limpiar espacios etre palabra
     $string = trim($string); //elimina espacios al principio y al final
