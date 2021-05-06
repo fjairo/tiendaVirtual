@@ -5,3 +5,12 @@
     padding: 6px;
     
   }
+  .headerRegister{
+    background:#009688;
+    color:#fff;
+  }
+  
+  .headerUpdate{
+    background:#007bff;
+    color: #fff;
+  }

@@ -42,12 +42,12 @@ class Roles extends Controllers
 
         if ($request_rol > 0) {
             $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
-        }else if($request_rol=='exist'){
+        } else if ($request_rol == 'exist') {
             $arrResponse = array('status' => false, 'msg' => '¡Atención! El rol ya existe.');
-        }else{
+        } else {
             $arrResponse = array('status' => false, 'msg' => 'No es posible almacenar los datos.');
         }
-        echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+        echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
         die();
     }
 }

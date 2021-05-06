@@ -29,12 +29,11 @@ class RolesModel extends Mysql
         $sql = "SELECT * FROM rol WHERE nombrerol= '{$this->strRol}'";
         $request = $this->select_all($sql);
 
-        if (empty($request)) 
-        {
+        if (empty($request)) {
             $query_insert = "INSERT INTO rol(nombrerol,descripcion,status) VALUES(?,?,?)";
             $arrData = array($this->strRol, $this->strDescripcion, $this->intStatus);
             $request_insert = $this->insert($query_insert, $arrData);
-            $return=$request_insert;
+            $return = $request_insert;
         } else {
             $return = "exist";
         }
