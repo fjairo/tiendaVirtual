@@ -1,7 +1,7 @@
 <?php
 
 //define("BASE_URL", "http://localhost/tiendaOline/");
-const BASE_URL = "http://localhost/tiendaOline/";
+const BASE_URL = "http://localhost/tiendaVirtual/";
 //Zona horaria
 date_default_timezone_set('America/Bogota');
 const DB_HOST = "localhost";

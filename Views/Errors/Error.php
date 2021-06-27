@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>pagina no encontrada</h1>
+    <h1>pagina no encontrada error</h1>
 </body>
 
 </html>

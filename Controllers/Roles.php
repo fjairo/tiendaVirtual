@@ -15,6 +15,7 @@ class Roles extends Controllers
         $data['page_name'] = "rol_usuario";
         $this->views->getView($this, "Roles", $data);
     }
+    
     public function getRoles()
     {
         $arrData = $this->model->selectRoles();
@@ -48,22 +49,53 @@ class Roles extends Controllers
         }
         die();
     }
-
+    //Insertar y actualizar datos
     public function setRol()
     {
+        $intIdRol = intval($_POST['idRol']);
         $strRol = strClean($_POST['txtNombre']);
         $strDescripcion = strClean($_POST['txtDescripcion']);
         $intStatus = intval($_POST['listStatus']);
-        $request_rol = $this->model->insertRol($strRol, $strDescripcion, $intStatus);
+
+        if ($intIdRol == 0) {
+            //crear
+            $request_rol = $this->model->insertRol($strRol, $strDescripcion, $intStatus);
+            $option = 1;
+        } else {
+            //actualizar
+            $request_rol = $this->model->updateRol($intIdRol, $strRol, $strDescripcion, $intStatus);
+            $option = 2;
+        }
 
         if ($request_rol > 0) {
-            $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+            if ($option == 1) {
+                $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente');
+            } else {
+                $arrResponse = array('status' => true, 'msg' => 'datos actualizados correctamente');
+            }
         } else if ($request_rol == 'exist') {
             $arrResponse = array('status' => false, 'msg' => '¡Atención! El rol ya existe.');
         } else {
             $arrResponse = array('status' => false, 'msg' => 'No es posible almacenar los datos.');
         }
         echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+    public function delRol(){
+        if($_POST){
+            $intIdRol=intval($_POST['idrol']);
+            $requestDelete=$this->model->deleteRol($intIdRol);
+            if($requestDelete=='ok')
+            {
+                $arrResponse=array('status'=>true, 'msg'=>'Se a eliminado el rol');
+            }else if($requestDelete=='exist'){
+                $arrResponse=array('status'=> false, 'msg'=>'no es posible eliminar un rol asociado a usuarios.');
+            }else{
+                $arrResponse= array('status'=>false, 'msg'=> 'Error al eliminar el rol.');
+            }
+            echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+        }
         die();
     }
 }

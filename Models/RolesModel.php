@@ -10,24 +10,22 @@ class RolesModel extends Mysql
     {
         parent::__construct(); //carga al constructor del padre
     }
-
+    //Extraer  todos los reqistros la tabla roles
     public function selectRoles()
     {
-        //Extraer  todos los reqistros la tabla roles
         $sql = "SELECT * FROM rol WHERE status !=0";
         $request = $this->select_all($sql);
         return $request;
     }
-
+    // Buscar rol
     public function selectRol(int $idrol)
     {
-        // Buscar rol
         $this->intIdRol = $idrol;
         $sql = "SELECT * FROM rol WHERE idrol= $this->intIdRol";
         $request = $this->select($sql);
         return $request;
     }
-
+    //Insertar rol
     public function insertRol(string $rol, string $descripcion, int $status)
     {
         $return = "";
@@ -47,5 +45,45 @@ class RolesModel extends Mysql
             $return = "exist";
         }
         return $return;
+    }
+    //Actualizar rol
+    public function updateRol(int $idrol, string $rol, string $descripcion, int $status)
+    {
+        $this->intIdRol = $idrol;
+        $this->strRol = $rol;
+        $this->strDescripcion = $descripcion;
+        $this->intStatus = $status;
+        $sql = "SELECT * FROM rol WHERE nombrerol='$this->strRol' AND idrol != $this->intIdRol";
+        $request= $this->select_all($sql);
+        if (empty($request)) {
+            $sql = "UPDATE rol SET nombrerol = ?, descripcion = ?, status = ? WHERE idrol= $this->intIdRol";
+            $arrData = array($this->strRol, $this->strDescripcion, $this->intStatus);
+            $request = $this->update($sql, $arrData);
+        } else {
+            $request = "exist";
+        }
+        return $request;
+    }
+
+    public function deleteRol(int $idrol)
+    {
+        $this->intIdRol=$idrol;
+        $sql="SELECT * FROM persona WHERE rolid= $this->intIdRol";
+        $request = $this->select_all($sql);
+        if(empty($request))
+        {
+            $sql= "UPDATE rol SET status = ? WHERE idrol =$this->intIdRol";
+            $arrData=array(0);
+            $request=$this->update($sql,$arrData);
+            if($request)
+            {
+                $request="ok";
+            }else{
+                $request="error";
+            }
+        }else{
+            $request='exist';
+        }
+        return $request;
     }
 }
