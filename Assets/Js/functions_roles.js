@@ -48,10 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (objData.status) {
                     $('#modalFormRol').modal('hide');
-                    console.log(formRol);
                     formRol.reset();
-                    swal("Roles de usuario", objData.myyyyysg, "success");
-                    //tableRoles.api().ajax.reload(function () {
+                    swal("Roles de usuario", objData.msg, "success");
                     tableRoles.ajax.reload(function () {
                         fntEditRol();
                     });
@@ -153,7 +151,6 @@ function fntEditRol() {
                             var objData = JSON.parse(request.responseText);
                             if (objData.status) {
                                 swal("eliminar!", objData.msg, "success");
-                                //tableRoles.api().ajax.reload(function () {
                                 tableRoles.ajax.reload(function () {
                                     fntEditRol();
                                     fntDelRol();
